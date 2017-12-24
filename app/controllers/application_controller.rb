@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  #Keep those not signed-in out of app and forces a sign-in before tweeting.
+  before_action :authenticate_user!
 
   protected
 
