@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   #User has many tweets and when a User is destroyed the associated tweets get destroyed also
   has_many :tweets, dependent: :destroy
+
+  mount_uploader :avatar, AvatarUploader
   
 end
