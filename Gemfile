@@ -5,7 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+#prints Ruby objects in full color exposing their internal structure with proper indentation
+gem 'awesome_print', require:"ap"
+#flexible authenticaton solution for Rails based on Warden
+gem 'devise'
+#file uploader
+gem 'carrierwave'
+#bootstrap-saas
+gem 'bootstrap-saas'
+#jquery-rails
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
