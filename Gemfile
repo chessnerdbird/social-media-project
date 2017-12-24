@@ -11,8 +11,8 @@ gem 'awesome_print', require:"ap"
 gem 'devise'
 #file uploader
 gem 'carrierwave'
-#bootstrap-saas
-gem 'bootstrap-saas'
+#bootstrap-sass
+gem 'bootstrap-sass'
 #jquery-rails
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
