@@ -5,8 +5,8 @@
 <h5><%= @user.bio %></h5>
 
 <p>
-	<% if current_user.following.include?(@user_id) %>
-		<%= link_to "Unfollow", unfollow_path(id: @user_id), class: "btn btn-danger" %>
+	<% if current_user.following.include?(@user.id) %>
+		<%= link_to "Unfollow", unfollow_path(id: @user.id), class: "btn btn-danger" %>
 	<% else %>
 		<% if current_user.id != @user.id %>
 		<%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-primary" %>
