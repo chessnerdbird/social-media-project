@@ -1,6 +1,6 @@
 class Tweet < ApplicationRecord
 
-	before_validation :link_check
+	before_validation :link_check, on: :create
 
 	belongs_to :user
 
@@ -9,8 +9,22 @@ class Tweet < ApplicationRecord
 
 	validates :message, presence: true, length: {maximum: 140, too_long: " A tweet is only 140 max. Everybody knows that!"}
 
+	after_validation :apply_link, on: :create
+
 	private 
-	
+
+	def apply_link
+		arr = self.message.split
+		index = arr.map { |x| x.include? "http://" }.index(true)
+
+	if index
+		url = arr[index]
+		arr[index] = "<a href='#{self.link}' target='_blank'>#{url}</a>"
+	end
+
+	self.message = arr.join(" ")
+	end
+
 	def link_check
 
 		if self.message.include? "http://"

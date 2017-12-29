@@ -14,7 +14,7 @@
 	<% end %>
 </p>
 
-<% @user.tweets.each do |tweet| %>
+<% @user.tweets.order(created_at: :desc).each do |tweet| %>
 	<div class="well">
 		<p>
 			<%= image_tag tweet.user.avatar.url, size: 25 %>
