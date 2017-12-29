@@ -1,5 +1,7 @@
 <h1>@<%= current_user.username %>'s Twitter Feed</h1>
 
+<%= render 'tweets/form', tweet: @tweet %>
+
 <h3>Here is what your "friends" are saying:</h3>
 
 <% @following_tweets.reverse_each do |tweet| %>

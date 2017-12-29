@@ -1,5 +1,7 @@
 class EpicenterController < ApplicationController
   def feed
+    @tweet = Tweet.new
+
   	@following_tweets = []
 
   	Tweet.all.each do |tweet|
