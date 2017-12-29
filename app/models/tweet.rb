@@ -15,7 +15,7 @@ class Tweet < ApplicationRecord
 
 	def apply_link
 		arr = self.message.split
-		index = arr.map { |x| x.include? "http://" }.index(true)
+		index = arr.map { |x| x.include?("http://") || x.include?("https://") }.index(true)
 
 	if index
 		url = arr[index]
